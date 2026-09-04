@@ -1093,49 +1093,7 @@
         <!-- Modal السند المالي -->
         <div id="receipt-modal" class="modal" onclick="if(event.target === this) closeReceiptModal();">
             <div class="modal-content">
-                
-                <!-- قسم إعدادات وتعديل بيانات السند -->
-                <div class="no-print" style="background: #f1f2f6; padding: 12px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #dcdde1;">
-                    <h4 style="font-size: 13px; color: #2f3640; margin-bottom: 8px; display: flex; align-items: center; gap: 5px;">
-                        <i class="fa-solid fa-gear" style="color: #ff9f43;"></i> قسم تعديل بيانات السند والشروط والتعليمات
-                    </h4>
-                    <div style="display: grid; grid-template-columns: 1fr; gap: 8px; font-size: 11px;">
-                        <div>
-                            <label style="font-weight: bold; color: #57606f; display: block; margin-bottom: 2px;">نص سياسة العربون والتأمين:</label>
-                            <textarea id="edit-policy-text" rows="3" oninput="updateReceiptLive()" style="width: 100%; padding: 6px; border-radius: 6px; border: 1px solid #cbd5e1; font-size: 11px; font-family: 'Cairo', sans-serif;">• العربون المدفوع يُعد تأكيداً رسمياً للحجز ويتم خصمه من إجمالي الإيجار.
-• بند التأمين: يُؤخذ مبلغ التأمين قبل الدخول ويُسترد بالكامل عند سلامة المكان.
-• في حال الإلغاء قبل الموعد بـ 48 ساعة أو أكثر يسترجع العربون كاملاً.</textarea>
-                        </div>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
-                            <div>
-                                <label style="font-weight: bold; color: #57606f; display: block; margin-bottom: 2px;">اسم البنك:</label>
-                                <input type="text" id="edit-bank-name" value="مصرف الراجحي" oninput="updateReceiptLive()" style="width: 100%; padding: 5px; border-radius: 6px; border: 1px solid #cbd5e1; font-size: 11px;">
-                            </div>
-                            <div>
-                                <label style="font-weight: bold; color: #57606f; display: block; margin-bottom: 2px;">اسم المستفيد:</label>
-                                <input type="text" id="edit-bank-beneficiary" value="شاليه كروز" oninput="updateReceiptLive()" style="width: 100%; padding: 5px; border-radius: 6px; border: 1px solid #cbd5e1; font-size: 11px;">
-                            </div>
-                        </div>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
-                            <div>
-                                <label style="font-weight: bold; color: #57606f; display: block; margin-bottom: 2px;">رقم الحساب:</label>
-                                <input type="text" id="edit-bank-account" value="123456789012345" oninput="updateReceiptLive()" style="width: 100%; padding: 5px; border-radius: 6px; border: 1px solid #cbd5e1; font-size: 11px;">
-                            </div>
-                            <div>
-                                <label style="font-weight: bold; color: #57606f; display: block; margin-bottom: 2px;">رقم الآيبان (IBAN):</label>
-                                <input type="text" id="edit-bank-iban" value="SA0380000001234567890123" oninput="updateReceiptLive()" style="width: 100%; padding: 5px; border-radius: 6px; border: 1px solid #cbd5e1; font-size: 11px; direction: ltr; text-align: right;">
-                            </div>
-                        </div>
-                        <div>
-                            <label style="font-weight: bold; color: #e84118; display: block; margin-bottom: 2px;"><i class="fa-solid fa-list-check"></i> صندوق التعليمات الإضافية:</label>
-                            <textarea id="edit-instructions-text" rows="2" oninput="updateReceiptLive()" placeholder="أدخل التعليمات هنا (مثلاً: أوقات الدخول والخروج، تعليمات النظافة...)" style="width: 100%; padding: 6px; border-radius: 6px; border: 1px solid #cbd5e1; font-size: 11px; font-family: 'Cairo', sans-serif;">1. الحفاظ التام على نظافة المكان والمرافق العامة وإعادتها كما كانت عند التسليم.
-2. الالتزام بموعد الدخول والخروج المحدد بدقة لضمان راحة وخدمة جميع الضيوف.
-3. منع استخدام الألعاب النارية أو إحداث أي إزعاج بيئي داخل النطاق السكني.
-4. إدارة الشاليه غير مسئولة نهائياً عن فقدان الأغراض الشخصية الثمينة غير المسلمة لإدارة الاستقبال.</textarea>
-                        </div>
-                    </div>
-                </div>
-
+    
                 <div id="invoice-printable-area" class="invoice-print-container">
                     <div class="invoice-header">
                         <h2>شاليه كروز</h2>

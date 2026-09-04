@@ -59,6 +59,7 @@
             align-items: flex-start;
         }
 
+        /* حاوية تتمدد بملء الشاشة بالكامل بدون قيود عرض */
         .mobile-viewport-wrapper {
             display: flex;
             width: 100%;
@@ -753,8 +754,8 @@
                             <option value="4">مايو</option>
                             <option value="5">يونيو</option>
                             <option value="6">يوليو</option>
-                            <option value="7">أغسطس</option>
-                            <option value="8" selected>سبتمبر</option>
+                            <option value="7" selected>أغسطس</option>
+                            <option value="8">سبتمبر</option>
                             <option value="9">أكتوبر</option>
                             <option value="10">نوفمبر</option>
                             <option value="11">ديسمبر</option>
@@ -993,6 +994,7 @@
                                     <th>الواصل</th>
                                     <th>المتبقي</th>
                                     <th>الحالة</th>
+                                    <th>إجراءات</th>
                                 </tr>
                             </thead>
                             <tbody id="bookings-table-body"></tbody>
@@ -1146,15 +1148,16 @@
                         <div>تاريخ الإصدار: <span id="inv-print-date">--</span></div>
                     </div>
 
-                    <div class="client-info-box" style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 10px;">
-                        <h4 style="margin: 0 0 8px 0; font-size: 13px; color: #333; border-bottom: 1px solid #e9ecef; padding-bottom: 4px;">بيانات العميل</h4>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; font-size: 11px; line-height: 1.4;">
-                            <div style="background: #fff; padding: 6px; border-radius: 4px; border: 1px solid #eee;">اسم المستأجر : <b id="inv-client-name">--</b></div>
-                            <div style="background: #fff; padding: 6px; border-radius: 4px; border: 1px solid #eee;">رقم الجوال : <b id="inv-client-phone">--</b></div>
-                            <div style="background: #fff; padding: 6px; border-radius: 4px; border: 1px solid #eee;">تاريخ الحجز : <b id="inv-booking-date">--</b></div>
-                            <div style="background: #fff; padding: 6px; border-radius: 4px; border: 1px solid #eee;">الفترة: <b id="inv-booking-period">--</b></div>
-                        </div>
+                <div class="client-info-box" style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 10px;">
+    <h4 style="margin: 0 0 8px 0; font-size: 13px; color: #333; border-bottom: 1px solid #e9ecef; padding-bottom: 4px;">بيانات العميل</h4>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; font-size: 11px; line-height: 1.4;">
+        <div style="background: #fff; padding: 6px; border-radius: 4px; border: 1px solid #eee;">اسم المستاجر : <b id="inv-client-name">--</b></div>
+        <div style="background: #fff; padding: 6px; border-radius: 4px; border: 1px solid #eee;">رقم الحوال : <b id="inv-client-phone">--</b></div>
+        <div style="background: #fff; padding: 6px; border-radius: 4px; border: 1px solid #eee;">تاريخ الجحز : <b id="inv-booking-date">--</b></div>
+        <div style="background: #fff; padding: 6px; border-radius: 4px; border: 1px solid #eee;">الفترة:  <b id="inv-booking-period">--</b></div>
                     </div>
+                   </div>
+
 
                     <table class="invoice-table">
                         <thead>
@@ -1191,42 +1194,42 @@
                         3. منع استخدام الألعاب النارية أو إحداث أي إزعاج بيئي داخل النطاق السكني.<br>
                         4. إدارة الشاليه غير مسئولة نهائياً عن فقدان الأغراض الشخصية الثمينة غير المسلمة لإدارة الاستقبال.
                     </div>
+<!-- تفاصيل الحساب البنكي والصورة بنسبة 50/50 -->
+<div class="footer-box" style="display: flex; gap: 4px; border: 1px solid #e0e0e0; padding: 4px; border-radius: 3px; background-color: #ffffff; max-width: 270px; margin-left: auto; margin-top: 6px; box-sizing: border-box;">
+    
+    <!-- القسم الأيمن: بيانات الحساب (50%) -->
+    <div style="flex: 0 0 50%; max-width: 50%; box-sizing: border-box;">
+        <h5 style="margin: 0 0 3px 0; font-size: 7px; color: #111; font-weight: bold; border-bottom: 1px solid #eee; padding-bottom: 2px;">تفاصيل الحساب البنكي</h5>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-bottom: 2px;">
+            <div style="background: #f8f9fa; border: 1px solid #eaeded; padding: 1px 2px; border-radius: 2px;">
+                <span style="color: #777; font-size: 5px; display: block; margin-bottom: -1px;">البنك</span>
+                <strong id="inv-bank-name" style="color: #2c3e50; font-size: 6px; word-break: break-word;">مصرف الراجحي</strong>
+            </div>
+            <div style="background: #f8f9fa; border: 1px solid #eaeded; padding: 1px 2px; border-radius: 2px;">
+                <span style="color: #777; font-size: 5px; display: block; margin-bottom: -1px;">المستفيد</span>
+                <strong id="inv-bank-beneficiary" style="color: #2c3e50; font-size: 6px; word-break: break-word;">شاليه كروز</strong>
+            </div>
+        </div>
 
-                    <!-- تفاصيل الحساب البنكي والصورة بنسبة 50/50 -->
-                    <div class="footer-box" style="display: flex; gap: 4px; border: 1px solid #e0e0e0; padding: 4px; border-radius: 3px; background-color: #ffffff; max-width: 270px; margin-left: auto; margin-top: 6px; box-sizing: border-box;">
-                        
-                        <!-- القسم الأيمن: بيانات الحساب (50%) -->
-                        <div style="flex: 0 0 50%; max-width: 50%; box-sizing: border-box;">
-                            <h5 style="margin: 0 0 3px 0; font-size: 10px; color: #111; font-weight: bold; border-bottom: 1px solid #eee; padding-bottom: 2px;">تفاصيل الحساب البنكي</h5>
-                            
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-bottom: 2px;">
-                                <div style="background: #f8f9fa; border: 1px solid #eaeded; padding: 1px 2px; border-radius: 2px;">
-                                    <span style="color: #777; font-size: 5px; display: block; margin-bottom: -1px;">البنك</span>
-                                    <strong id="inv-bank-name" style="color: #2c3e50; font-size: 6px; word-break: break-word;">مصرف الراجحي</strong>
-                                </div>
-                                <div style="background: #f8f9fa; border: 1px solid #eaeded; padding: 1px 2px; border-radius: 2px;">
-                                    <span style="color: #777; font-size: 5px; display: block; margin-bottom: -1px;">المستفيد</span>
-                                    <strong id="inv-bank-beneficiary" style="color: #2c3e50; font-size: 6px; word-break: break-word;">شاليه كروز</strong>
-                                </div>
-                            </div>
+        <div style="background: #f8f9fa; border: 1px solid #eaeded; padding: 1px 2px; border-radius: 2px; margin-bottom: 2px;">
+            <span style="color: #777; font-size: 5px; display: block; margin-bottom: -1px;">رقم الحساب</span>
+            <strong id="inv-bank-account" style="color: #2c3e50; font-family: monospace; font-size: 5.5px; word-break: break-all; display: block;">123456789012345</strong>
+        </div>
 
-                            <div style="background: #f8f9fa; border: 1px solid #eaeded; padding: 1px 2px; border-radius: 2px; margin-bottom: 2px;">
-                                <span style="color: #777; font-size: 5px; display: block; margin-bottom: -1px;">رقم الحساب</span>
-                                <strong id="inv-bank-account" style="color: #2c3e50; font-family: monospace; font-size: 8px; word-break: break-all; display: block;">123456789012345</strong>
-                            </div>
+        <div style="background: #f8f9fa; border: 1px solid #eaeded; padding: 1px 2px; border-radius: 2px;">
+            <span style="color: #777; font-size: 5px; display: block; margin-bottom: -1px;">الآيبان (IBAN)</span>
+            <strong id="inv-bank-iban" style="color: #2c3e50; font-family: monospace; font-size: 5px; direction: ltr; display: block; text-align: left; word-break: break-all;">SA0380000001234567890123</strong>
+        </div>
+    </div>
 
-                            <div style="background: #f8f9fa; border: 1px solid #eaeded; padding: 1px 2px; border-radius: 2px;">
-                                <span style="color: #777; font-size: 5px; display: block; margin-bottom: -1px;">الآيبان (IBAN)</span>
-                                <strong id="inv-bank-iban" style="color: #2c3e50; font-family: monospace; font-size: 8px; direction: ltr; display: block; text-align: left; word-break: break-all;">SA0380000001234567890123</strong>
-                            </div>
-                        </div>
+    <!-- القسم الأيسر: الصورة (50%) -->
+    <div style="flex: 0 0 50%; max-width: 50%; display: flex; align-items: center; justify-content: center; background: #fafafa; border: 1px solid #eaeded; border-radius: 2px; padding: 2px; box-sizing: border-box;">
+        <img src="ضع_رابط_الصورة_هنا" alt="صورة" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 2px;">
+    </div>
 
-                        <!-- القسم الأيسر: الصورة (50%) -->
-                        <div style="flex: 0 0 50%; max-width: 50%; display: flex; align-items: center; justify-content: center; background: #fafafa; border: 1px solid #eaeded; border-radius: 2px; padding: 2px; box-sizing: border-box;">
-                            <img src="https://pwwoowowowwo.github.io/croz.1/Aigonh.png.PNG" alt="QR Code" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 2px;">
-                        </div>
+</div>
 
-                    </div>
 
                     <div class="signature-section" style="display: flex; justify-content: space-between; margin-top: 15px; padding-top: 10px; border-top: 1px dashed #cbd5e1; font-size: 11px;">
                         <div style="text-align: center; width: 45%;">
@@ -1240,13 +1243,9 @@
                     </div>
                 </div>
 
-                <!-- أزرار الإجراءات داخل نافذة السند المفتوحة عند الضغط على اسم العميل -->
                 <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 15px;">
-                    <button onclick="quickMarkAsPaidModal()" class="btn btn-success" style="font-size: 12px;"><i class="fa-solid fa-check"></i> تأكيد الحجز (دفع كامل)</button>
-                    <button onclick="editBookingFromModal()" class="btn btn-secondary" style="font-size: 12px; background: #54a0ff;"><i class="fa-solid fa-pen"></i> تعديل الحجز</button>
                     <button onclick="downloadReceiptPDFDirect()" class="btn" style="background: #eb4d4b; font-size: 12px;"><i class="fa-solid fa-file-pdf"></i> تحميل PDF</button>
                     <button onclick="sendWhatsApp()" class="btn btn-success" style="font-size: 12px;"><i class="fa-brands fa-whatsapp"></i> إرسال واتساب</button>
-                    <button onclick="deleteBookingFromModal()" class="btn badge danger" style="font-size: 12px; border: none; padding: 10px; cursor: pointer; color: white;"><i class="fa-solid fa-trash"></i> حذف الحجز</button>
                     <button onclick="closeReceiptModal()" class="btn" style="background: #a4b0be; font-size: 12px;">إغلاق</button>
                 </div>
             </div>
@@ -1263,13 +1262,18 @@
     </div>
 
     <script>
-        // تم مسح كافة الأسماء والحجوزات التجريبية لتكون فارغة تماماً
-        let bookings = JSON.parse(localStorage.getItem('cruise_bookings')) || [];
-        let expenses = JSON.parse(localStorage.getItem('cruise_expenses')) || [];
+        let bookings = JSON.parse(localStorage.getItem('cruise_bookings')) || [
+            { id: 1, name: 'تميم البدحاني', phone: '501112233', date: '2026-08-10', period: 'مساء', section: 'نساء', price: 600, paid: 100, method: 'تحويل بنكي', status: 'عربون' },
+            { id: 2, name: 'وليد محمد', phone: '552223344', date: '2026-08-12', period: 'يوم كامل', section: 'قسمين', price: 1200, paid: 1200, method: 'كاش', status: 'مؤكد' }
+        ];
+
+        let expenses = JSON.parse(localStorage.getItem('cruise_expenses')) || [
+            { id: 1, title: 'فاتورة الكهرباء والماء', category: 'كهرباء وماء', amount: 350, date: '2026-08-01' }
+        ];
 
         let activeReceipt = null;
         let currentCalendarYear = 2026;
-        let currentCalendarMonth = 8; // سبتمبر
+        let currentCalendarMonth = 7; 
         const monthNames = ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'];
 
         window.addEventListener('load', () => {
@@ -1540,41 +1544,76 @@
 
             let recentBody = document.getElementById('dashboard-recent-body');
             recentBody.innerHTML = '';
-            if(bookings.length === 0) {
-                recentBody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: #a4b0be; padding: 15px;">لا توجد حجوزات مسجلة حالياً</td></tr>`;
-            } else {
-                bookings.slice(-4).reverse().forEach(b => {
-                    let rem = Math.max(0, (parseFloat(b.price) || 0) - (parseFloat(b.paid) || 0));
-                    let tr = document.createElement('tr');
-                    tr.innerHTML = `
-                        <td><b>${b.name}</b></td>
-                        <td>${b.date}</td>
-                        <td><span class="badge nisah">${b.section}</span></td>
-                        <td>${b.price} ر.س</td>
-                        <td style="color: #c62828; font-weight: bold;">${rem} ر.س</td>
-                        <td><span class="badge ${b.status === 'مؤكد' ? 'success' : 'danger'}">${b.status}</span></td>
-                    `;
-                    recentBody.appendChild(tr);
-                });
-            }
+            bookings.slice(-4).reverse().forEach(b => {
+                let rem = Math.max(0, (parseFloat(b.price) || 0) - (parseFloat(b.paid) || 0));
+                let tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><b>${b.name}</b></td>
+                    <td>${b.date}</td>
+                    <td><span class="badge nisah">${b.section}</span></td>
+                    <td>${b.price} ر.س</td>
+                    <td style="color: #c62828; font-weight: bold;">${rem} ر.س</td>
+                    <td><span class="badge ${b.status === 'مؤكد' ? 'success' : 'danger'}">${b.status}</span></td>
+                `;
+                recentBody.appendChild(tr);
+            });
         }
 
         function renderBookingsTable() {
             let tbody = document.getElementById('bookings-table-body');
             tbody.innerHTML = '';
-            if(bookings.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="10" style="text-align: center; color: #a4b0be; padding: 20px;">لا توجد حجوزات لعرضها، قم بإضافة حجز جديد.</td></tr>`;
-                return;
-            }
             bookings.forEach((b, index) => {
                 let rem = Math.max(0, (parseFloat(b.price) || 0) - (parseFloat(b.paid) || 0));
                 let displayPhone = b.phone.startsWith('966') ? '+' + b.phone : '+966' + b.phone;
                 let tr = document.createElement('tr');
                 
+                let receiptBtn = document.createElement('button');
+                receiptBtn.className = 'btn';
+                receiptBtn.style.cssText = 'padding: 6px 10px; font-size: 11px; margin-left: 4px; width:auto;';
+                receiptBtn.title = 'عرض السند';
+                receiptBtn.innerHTML = '<i class="fa-solid fa-receipt"></i>';
+                receiptBtn.onclick = function() { openReceipt(b); };
+
+                let tdActions = document.createElement('td');
+                
+                let btnPay = document.createElement('button');
+                btnPay.className = 'btn btn-success';
+                btnPay.style.cssText = 'padding: 6px 10px; font-size: 11px; margin-left: 4px; width:auto;';
+                btnPay.title = 'دفع كامل';
+                btnPay.innerHTML = '<i class="fa-solid fa-check"></i>';
+                btnPay.onclick = function() { quickMarkAsPaid(b.id); };
+                tdActions.appendChild(btnPay);
+
+                let btnEdit = document.createElement('button');
+                btnEdit.className = 'btn';
+                btnEdit.style.cssText = 'padding: 6px 10px; font-size: 11px; background: #54a0ff; margin-left: 4px; width:auto;';
+                btnEdit.title = 'تعديل';
+                btnEdit.innerHTML = '<i class="fa-solid fa-pen"></i>';
+                btnEdit.onclick = function() { editBooking(b.id); };
+                tdActions.appendChild(btnEdit);
+
+                tdActions.appendChild(receiptBtn);
+
+                let btnPdf = document.createElement('button');
+                btnPdf.className = 'btn';
+                btnPdf.style.cssText = 'padding: 6px 10px; font-size: 11px; background: #eb4d4b; margin-left: 4px; width:auto;';
+                btnPdf.title = 'PDF';
+                btnPdf.innerHTML = '<i class="fa-solid fa-file-pdf"></i>';
+                btnPdf.onclick = function() { downloadReceiptPDF(b.id); };
+                tdActions.appendChild(btnPdf);
+
+                let btnDel = document.createElement('button');
+                btnDel.className = 'btn badge danger';
+                btnDel.style.cssText = 'padding: 6px 10px; border:none; cursor:pointer; width:auto;';
+                btnDel.title = 'حذف';
+                btnDel.innerHTML = '<i class="fa-solid fa-trash"></i>';
+                btnDel.onclick = function() { deleteBooking(b.id); };
+                tdActions.appendChild(btnDel);
+
                 let badgeClass = b.section === 'نساء' ? 'nisah' : (b.section === 'رجال' ? 'rijal' : 'qismain');
                 tr.innerHTML = `
                     <td>${index + 1}</td>
-                    <td><b style="color: #54a0ff; cursor: pointer; text-decoration: underline;" onclick='openReceipt(${JSON.stringify(b)})'>${b.name}</b></td>
+                    <td><b>${b.name}</b></td>
                     <td style="direction: ltr; text-align: right;">${displayPhone}</td>
                     <td>${b.date}</td>
                     <td>${b.period}</td>
@@ -1584,6 +1623,7 @@
                     <td style="color: #c62828; font-weight: bold;">${rem} ر.س</td>
                     <td><span class="badge ${b.status === 'مؤكد' ? 'success' : 'danger'}">${b.status}</span></td>
                 `;
+                tr.appendChild(tdActions);
                 tbody.appendChild(tr);
             });
         }
@@ -1591,10 +1631,6 @@
         function renderExpensesTable() {
             let tbody = document.getElementById('expenses-table-body');
             tbody.innerHTML = '';
-            if(expenses.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: #a4b0be; padding: 20px;">لا توجد مصروفات مسجلة</td></tr>`;
-                return;
-            }
             expenses.forEach(e => {
                 let tr = document.createElement('tr');
                 tr.innerHTML = `
@@ -1756,28 +1792,6 @@
 
         function closeReceiptModal() {
             document.getElementById('receipt-modal').style.display = 'none';
-        }
-
-        function quickMarkAsPaidModal() {
-            if(!activeReceipt) return;
-            quickMarkAsPaid(activeReceipt.id);
-            let updated = bookings.find(item => String(item.id) === String(activeReceipt.id));
-            if(updated) openReceipt(updated);
-            alert('تم تأكيد الحجز ودفع كامل المبلغ!');
-        }
-
-        function editBookingFromModal() {
-            if(!activeReceipt) return;
-            closeReceiptModal();
-            editBooking(activeReceipt.id);
-        }
-
-        function deleteBookingFromModal() {
-            if(!activeReceipt) return;
-            if(confirm('هل أنت متأكد من حذف هذا الحجز؟')) {
-                deleteBooking(activeReceipt.id);
-                closeReceiptModal();
-            }
         }
 
         function downloadReceiptPDF(id) {

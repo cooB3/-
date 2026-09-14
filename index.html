@@ -1258,107 +1258,120 @@
                     </div>
                 </div>
 
-                <div id="invoice-printable-area" class="invoice-print-container">
-                    <div class="invoice-header">
-                        <h2>شاليه كروز</h2>
-                        <p>سند تأكيد حجز رسمي وفاتورة تفصيلية</p>
-                        <p style="margin-top: 2px; font-size: 10px; color: #57606f;"> شارع الإمام مسلم | الجوال: 0555686540 </p>
-                    </div>
+                <div id="invoice-printable-area" class="invoice-print-container" style="font-family: system-ui, -apple-system, sans-serif; direction: rtl; max-width: 800px; margin: 0 auto; padding: 15px; color: #2d3436;">
+    
+    <!-- Header Section -->
+    <div class="invoice-header" style="text-align: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 12px;">
+        <h2 style="margin: 0; font-size: 20px; color: #1e293b; font-weight: 700;">شاليه كروز</h2>
+        <p style="margin: 3px 0 0 0; font-size: 12px; color: #64748b;">سند تأكيد حجز رسمي وفاتورة تفصيلية</p>
+        <p style="margin: 4px 0 0 0; font-size: 11px; color: #64748b;"> شارع الإمام مسلم | الجوال: 0555686540 </p>
+    </div>
 
-                    <div class="invoice-meta">
-                        <div>رقم السند: <span id="inv-id">#-----</span></div>
-                        <div>تاريخ الإصدار: <span id="inv-print-date">--</span></div>
-                    </div>
+    <!-- Invoice Meta Information -->
+    <div class="invoice-meta" style="display: flex; justify-content: space-between; font-size: 11px; font-weight: 600; color: #475569; margin-bottom: 12px; padding: 6px 10px; background: #f8fafc; border-radius: 6px;">
+        <div>رقم السند: <span id="inv-id" style="color: #0f172a;">#-----</span></div>
+        <div>تاريخ الإصدار: <span id="inv-print-date" style="color: #0f172a;">--</span></div>
+    </div>
 
-                    <div class="client-info-box" style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 10px;">
-                        <h4 style="margin: 0 0 8px 0; font-size: 13px; color: #333; border-bottom: 1px solid #e9ecef; padding-bottom: 4px;">بيانات العميل</h4>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; font-size: 11px; line-height: 1.4;">
-                            <div style="background: #fff; padding: 6px; border-radius: 4px; border: 1px solid #eee;">اسم المستأجر : <b id="inv-client-name">--</b></div>
-                            <div style="background: #fff; padding: 6px; border-radius: 4px; border: 1px solid #eee;">رقم الجوال : <b id="inv-client-phone">--</b></div>
-                            <div style="background: #fff; padding: 6px; border-radius: 4px; border: 1px solid #eee;">تاريخ الحجز : <b id="inv-booking-date">--</b></div>
-                            <div style="background: #fff; padding: 6px; border-radius: 4px; border: 1px solid #eee;">الفترة: <b id="inv-booking-period">--</b></div>
-                        </div>
-                    </div>
+    <!-- Client Info Box -->
+    <div class="client-info-box" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px; margin-bottom: 12px;">
+        <h4 style="margin: 0 0 8px 0; font-size: 12px; color: #0f172a; border-bottom: 1px solid #f1f5f9; padding-bottom: 4px;">بيانات العميل</h4>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 11px;">
+            <div style="background: #f8fafc; padding: 6px 8px; border-radius: 4px; border: 1px solid #f1f5f9;">اسم المستأجر: <b id="inv-client-name" style="color: #0f172a;">--</b></div>
+            <div style="background: #f8fafc; padding: 6px 8px; border-radius: 4px; border: 1px solid #f1f5f9;">رقم الجوال: <b id="inv-client-phone" style="color: #0f172a;">--</b></div>
+            <div style="background: #f8fafc; padding: 6px 8px; border-radius: 4px; border: 1px solid #f1f5f9;">تاريخ الحجز: <b id="inv-booking-date" style="color: #0f172a;">--</b></div>
+            <div style="background: #f8fafc; padding: 6px 8px; border-radius: 4px; border: 1px solid #f1f5f9;">الفترة: <b id="inv-booking-period" style="color: #0f172a;">--</b></div>
+        </div>
+    </div>
 
-                    <table class="invoice-table">
-                        <thead>
-                            <tr>
-                                <th>القسم</th>
-                                <th>المبلغ</th>
-                                <th>الواصل</th>
-                                <th>المتبقي</th>
-                                <th>الحالة</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td id="inv-section">--</td>
-                                <td id="inv-price">-- ر.س</td>
-                                <td id="inv-paid" style="color: #10ac84; font-weight: bold;">-- ر.س</td>
-                                <td id="inv-rem" style="color: #c62828; font-weight: bold;">-- ر.س</td>
-                                <td><span id="inv-status-badge" class="badge success">--</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
+    <!-- Invoice Table -->
+    <table class="invoice-table" style="width: 100%; border-collapse: collapse; margin-bottom: 12px; font-size: 11px; text-align: center;">
+        <thead>
+            <tr style="background-color: #f1f5f9; color: #334155;">
+                <th style="padding: 8px; border: 1px solid #e2e8f0;">القسم</th>
+                <th style="padding: 8px; border: 1px solid #e2e8f0;">المبلغ</th>
+                <th style="padding: 8px; border: 1px solid #e2e8f0;">الواصل</th>
+                <th style="padding: 8px; border: 1px solid #e2e8f0;">المتبقي</th>
+                <th style="padding: 8px; border: 1px solid #e2e8f0;">الحالة</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="inv-section" style="padding: 8px; border: 1px solid #e2e8f0;">--</td>
+                <td id="inv-price" style="padding: 8px; border: 1px solid #e2e8f0;">-- ر.س</td>
+                <td id="inv-paid" style="padding: 8px; border: 1px solid #e2e8f0; color: #16a34a; font-weight: bold;">-- ر.س</td>
+                <td id="inv-rem" style="padding: 8px; border: 1px solid #e2e8f0; color: #dc2626; font-weight: bold;">-- ر.س</td>
+                <td style="padding: 8px; border: 1px solid #e2e8f0;"><span id="inv-status-badge" class="badge success">--</span></td>
+            </tr>
+        </tbody>
+    </table>
 
-                    <div class="deposit-policy-box">
-    <h5><i class="fa-solid fa-circle-info"></i> سياسة العربون والتأمين والشروط:</h5>
-    <span id="rendered-policy-text" style="font-size: 8px;">• العربون المدفوع يُعد تأكيداً رسمياً للحجز ويتم خصمه من إجمالي الإيجار.<br>     
-    • <b>بند التأمين:</b> يُؤخذ مبلغ التأمين قبل الدخول ويُسترد بالكامل عند سلامة المكان.<br>
-    • في حال الإلغاء قبل الموعد بـ 48 ساعة أو أكثر يسترجع العربون كاملاً.</span>
-</div>
+    <!-- Deposit Policy Box -->
+    <div class="deposit-policy-box" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px 10px; margin-bottom: 8px; font-size: 10px; color: #334155;">
+        <h5 style="margin: 0 0 4px 0; font-size: 11px; color: #0f172a;"><i class="fa-solid fa-circle-info"></i> سياسة العربون والتأمين والشروط:</h5>
+        <span id="rendered-policy-text" style="line-height: 1.5; display: block;">
+            • العربون المدفوع يُعد تأكيداً رسمياً للحجز ويتم خصمه من إجمالي الإيجار.<br>     
+            • <b>بند التأمين:</b> يُؤخذ مبلغ التأمين قبل الدخول ويُسترد بالكامل عند سلامة المكان.<br>
+            • في حال الإلغاء قبل الموعد بـ 48 ساعة أو أكثر يسترجع العربون كاملاً.
+        </span>
+    </div>
 
+    <!-- General Instructions & Notes -->
+    <div class="invoice-notes" style="background: #fefce8; border: 1px solid #fef08a; color: #854d0e; padding: 8px 10px; border-radius: 6px; font-size: 10px; margin-bottom: 12px; line-height: 1.4;">
+        <h5 style="margin: 0 0 4px 0; font-size: 11px; color: #713f12;"><i class="fa-solid fa-triangle-exclamation"></i> تنبيهات والشروط العامة لاستخدام الشاليه:</h5>
+        <span id="rendered-instructions-text" style="display: block;">
+            1. الحفاظ التام على نظافة المكان والمرافق العامة وإعادتها كما كانت عند التسليم.<br>
+            2. الالتزام بموعد الدخول والخروج المحدد بدقة لضمان راحة وخدمة جميع الضيوف.<br>
+            3. منع استخدام الألعاب النارية أو إحداث أي إزعاج بيئي داخل النطاق السكني.<br>
+            4. إدارة الشاليه غير مسئولة نهائياً عن فقدان الأغراض الشخصية الثمينة غير المسلمة لإدارة الاستقبال.
+        </span>
+    </div>
 
-                    <div class="invoice-notes" style="background: #fff3cd; border: 1px solid #ffeeba; color: #856404; padding: 6px 10px; border-radius: 6px; font-size: 7px; margin-top: 8px; line-height: 1.3;">
-                        <h5><i class="fa-solid fa-triangle-exclamation"></i> تنبيهات والشروط العامة لاستخدام الشاليه:</h5>
-                        <span id="rendered-instructions-text">1. الحفاظ التام على نظافة المكان والمرافق العامة وإعادتها كما كانت عند التسليم.<br>
-                        2. الالتزام بموعد الدخول والخروج المحدد بدقة لضمان راحة وخدمة جميع الضيوف.<br>
-                        3. منع استخدام الألعاب النارية أو إحداث أي إزعاج بيئي داخل النطاق السكني.<br>
-                        4. إدارة الشاليه غير مسئولة نهائياً عن فقدان الأغراض الشخصية الثمينة غير المسلمة لإدارة الاستقبال.</span>
-                    </div>
-
-                    <div class="footer-box" style="display: flex; gap: 4px; border: 1px solid #e0e0e0; padding: 4px; border-radius: 3px; background-color: #ffffff; max-width: 300px; margin-left: auto; margin-top: 6px; box-sizing: border-box; align-items: stretch;">
-                        <div style="flex: 0 0 50%; max-width: 50%; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between;">
-                            <h5 style="margin: 0 0 3px 0; font-size: 10px; color: #111; font-weight: bold; border-bottom: 1px solid #eee; padding-bottom: 2px;">تفاصيل الحساب البنكي</h5>
-                            
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-bottom: 2px;">
-                                <div style="background: #f8f9fa; border: 1px solid #eaeded; padding: 1px 3px; border-radius: 2px;">
-                                    <span style="color: #777; font-size: 5px; display: block; margin-bottom: -1px;">البنك</span>
-                                    <strong id="inv-bank-name" style="color: #2c3e50; font-size: 6px; white-space: nowrap; display: block;">مصرف الراجحي</strong>
-                                </div>
-                                <div style="background: #f8f9fa; border: 1px solid #eaeded; padding: 1px 3px; border-radius: 2px;">
-                                    <span style="color: #777; font-size: 5px; display: block; margin-bottom: -1px;">المستفيد</span>
-                                    <strong id="inv-bank-beneficiary" style="color: #2c3e50; font-size: 6px; white-space: nowrap; display: block;">شاليه كروز</strong>
-                                </div>
-                            </div>
-
-                            <div style="background: #f8f9fa; border: 1px solid #eaeded; padding: 1px 3px; border-radius: 2px; margin-bottom: 2px;">
-                                <span style="color: #777; font-size: 5px; display: block; margin-bottom: -1px;">رقم الحساب</span>
-                                <strong id="inv-bank-account" style="color: #2c3e50; font-family: monospace; font-size: 7px; white-space: nowrap; display: block;">123456789012345</strong>
-                            </div>
-
-                            <div style="background: #f8f9fa; border: 1px solid #eaeded; padding: 1px 3px; border-radius: 2px;">
-                                <span style="color: #777; font-size: 5px; display: block; margin-bottom: -1px;">الآيبان (IBAN)</span>
-                                <strong id="inv-bank-iban" style="color: #2c3e50; font-family: monospace; font-size: 10px; direction: ltr; display: block; text-align: left; white-space: nowrap;">SA0380000001234567890123</strong>
-                            </div>
-                        </div>
-
-                        <div style="flex: 0 0 50%; max-width: 50%; display: flex; align-items: center; justify-content: center; background: #fafafa; border: 1px solid #eaeded; border-radius: 2px; padding: 2px; box-sizing: border-box;">
-                            <img src="https://pwwoowowowwo.github.io/croz.1/QR.png" alt="QR Code" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 2px;">
-                        </div>
-                    </div>
-
-                    <div class="signature-section" style="display: flex; justify-content: space-between; margin-top: 15px; padding-top: 10px; border-top: 1px dashed #cbd5e1; font-size: 11px;">
-                        <div style="text-align: center; width: 45%;">
-                            <p style="margin-bottom: 20px; font-weight: bold; color: #1e272e;">توقيع المستأجر</p>
-                            <p style="border-bottom: 1px solid #718093; width: 120px; margin: 0 auto;"></p>
-                        </div>
-                        <div style="text-align: center; width: 45%;">
-                            <p style="margin-bottom: 4px; font-weight: bold; color: #1e272e;">ختم الإدارة</p>
-                            <div style="width: 80px; height: 40px; border: 1px dashed #a4b0be; margin: 0 auto; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #a4b0be; border-radius: 4px;">الختم</div>
-                        </div>
-                    </div>
+    <!-- Bank Details & QR Section -->
+    <div class="footer-box" style="display: flex; gap: 8px; border: 1px solid #e2e8f0; padding: 8px; border-radius: 6px; background-color: #ffffff; max-width: 380px; margin-left: auto; box-sizing: border-box; align-items: stretch;">
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+            <h5 style="margin: 0 0 4px 0; font-size: 10px; color: #0f172a; font-weight: bold; border-bottom: 1px solid #f1f5f9; padding-bottom: 2px;">تفاصيل الحساب البنكي</h5>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-bottom: 4px;">
+                <div style="background: #f8fafc; border: 1px solid #f1f5f9; padding: 3px 4px; border-radius: 4px;">
+                    <span style="color: #64748b; font-size: 8px; display: block;">البنك</span>
+                    <strong id="inv-bank-name" style="color: #0f172a; font-size: 9px; display: block;">مصرف الراجحي</strong>
                 </div>
+                <div style="background: #f8fafc; border: 1px solid #f1f5f9; padding: 3px 4px; border-radius: 4px;">
+                    <span style="color: #64748b; font-size: 8px; display: block;">المستفيد</span>
+                    <strong id="inv-bank-beneficiary" style="color: #0f172a; font-size: 9px; display: block;">شاليه كروز</strong>
+                </div>
+            </div>
+
+            <div style="background: #f8fafc; border: 1px solid #f1f5f9; padding: 3px 4px; border-radius: 4px; margin-bottom: 4px;">
+                <span style="color: #64748b; font-size: 8px; display: block;">رقم الحساب</span>
+                <strong id="inv-bank-account" style="color: #0f172a; font-family: monospace; font-size: 9px; display: block;">123456789012345</strong>
+            </div>
+
+            <div style="background: #f8fafc; border: 1px solid #f1f5f9; padding: 3px 4px; border-radius: 4px;">
+                <span style="color: #64748b; font-size: 8px; display: block;">الآيبان (IBAN)</span>
+                <strong id="inv-bank-iban" style="color: #0f172a; font-family: monospace; font-size: 8px; direction: ltr; display: block; text-align: left;">SA0380000001234567890123</strong>
+            </div>
+        </div>
+
+        <div style="width: 100px; display: flex; align-items: center; justify-content: center; background: #f8fafc; border: 1px solid #f1f5f9; border-radius: 4px; padding: 4px; box-sizing: border-box;">
+            <img src="https://pwwoowowowwo.github.io/croz.1/QR.png" alt="QR Code" style="width: 100%; height: auto; object-fit: contain; border-radius: 2px;">
+        </div>
+    </div>
+
+    <!-- Signatures Section -->
+    <div class="signature-section" style="display: flex; justify-content: space-between; margin-top: 20px; padding-top: 10px; border-top: 1px dashed #cbd5e1; font-size: 11px;">
+        <div style="text-align: center; width: 40%;">
+            <p style="margin-bottom: 25px; font-weight: bold; color: #1e293b;">توقيع المستأجر</p>
+            <p style="border-bottom: 1px solid #94a3b8; width: 120px; margin: 0 auto;"></p>
+        </div>
+        <div style="text-align: center; width: 40%;">
+            <p style="margin-bottom: 6px; font-weight: bold; color: #1e293b;">ختم الإدارة</p>
+            <div style="width: 80px; height: 40px; border: 1px dashed #94a3b8; margin: 0 auto; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #94a3b8; border-radius: 4px;">الختم</div>
+        </div>
+    </div>
+
+</div>
 
                 <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 15px;">
                     <button onclick="quickMarkAsPaidModal()" class="btn btn-success" style="font-size: 12px;"><i class="fa-solid fa-check"></i> تأكيد الحجز (دفع كامل)</button>
